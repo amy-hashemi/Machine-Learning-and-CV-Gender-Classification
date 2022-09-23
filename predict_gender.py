@@ -111,15 +111,17 @@ def image_resize(image, width = None, height = None, inter = cv2.INTER_AREA):
     return cv2.resize(image, dim, interpolation = inter)
 
 def predict_gender(input_path: str):
-    '''Predict the gender of the faces showing in the image'''
+    '''
+    Predict the gender of the faces showing in the image
+    '''
     # Read Input Image
     img = cv2.imread(input_path)
     # resize the image, uncomment if you want to resize the image
     # img = cv2.resize(img, (frame_width, frame_height))
     # Take a copy of the initial image and resize it
     frame = img.copy()
-    if frame.shape[1] > frame_width:
-        frame = image_resize(frame, width=frame_width)
+    #if frame.shape[1] > frame_width:
+    #    frame = image_resize(frame, width=frame_width)
     # predict the faces
     faces = get_faces(frame)
     # Loop over the faces detected
